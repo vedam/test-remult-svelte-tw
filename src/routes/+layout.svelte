@@ -1,30 +1,33 @@
 <script lang="ts">
-  import { Remult, remult } from 'remult'
-  import '../app.css'
-  import { createSubscriber } from 'svelte/reactivity'
-
+  import { Remult, remult } from 'remult';
+  import '../app.css';
+  import { createSubscriber } from 'svelte/reactivity';
+  
   interface Props {
-    data: import('./$types').LayoutData
+    data: import('./$types').LayoutData;
     children?: import('svelte').Snippet
   }
-
-  let { data, children }: Props = $props()
-
-  remult.user = data.user
-
+  
+  let { data, children }: Props = $props();
+  
+  remult.user = data.user;
+  
   function initRemultSvelteReactivity() {
     Remult.entityRefInit = (x) => {
-      let update = () => {}
+      let update = () => {};
+  
       let s = createSubscriber((u) => {
-        update = u
-      })
+        update = u;
+      });
+  
       x.subscribe({
         reportObserved: () => s(),
-        reportChanged: () => update(),
-      })
-    }
+        reportChanged: () => update()
+      });
+    };
   }
-  initRemultSvelteReactivity()
+  
+  initRemultSvelteReactivity();
 </script>
 
 <svelte:head>
