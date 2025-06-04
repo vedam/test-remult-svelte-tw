@@ -19,6 +19,7 @@ body {
 }
 
 h1 {
+	/* color is accomplished with a tw-class in /routes/+page.svelte on h1 */
   font-style: italic;
   font-size: 3.75rem;
   font-weight: inherit;
