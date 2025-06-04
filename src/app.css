@@ -1,4 +1,15 @@
 @charset "utf-8";
+@import 'tailwindcss';
+
+@theme {
+	--color-primary: var(---primary);
+}
+
+:root {
+	--hue-primary: 202.18;
+	---primary: oklch(0.657 0.2 var(--hue-primary));
+}
+
 
 body {
   font-family: Arial;
@@ -8,7 +19,6 @@ body {
 }
 
 h1 {
-  color: #ef4444;
   font-style: italic;
   font-size: 3.75rem;
   font-weight: inherit;

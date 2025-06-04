@@ -72,7 +72,7 @@
 </script>
 
 <div>
-  <h1>todos</h1>
+  <h1 class="text-primary">todos</h1>
   <main>
     <div>
       Hello {remult.user?.name}
